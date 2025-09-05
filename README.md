@@ -53,13 +53,52 @@ model.val(data  = yaml_file, split = "test")
 ```
 
 
+#### 3. Counting Fish
+A yolo11 model pretrained using the full dataset is available under `weights/` for river herring detection and counting. The speed of processing each video mostly depending on GPU.
 
 
-## Quick start - Run pre-trained model  
-(1) Setup environment: `conda env create -f environment.yml && conda activate fish-ai`  
-(2) Download weights  to `/models`  
-(3) Put video files in `data/raw/videos/` and list them in `examples/video_list.txt`  
-(4) Run: `bash scripts/inference.sh examples/video_list.txt`  
+```python
+python src/count_fish.py \
+    data/raw_video/1_2024-05-07_10_06_48-355.mp4 \ # input video file
+    weights/river-herring-yolo11.pt \              # model weight
+    outputs/fish_count \                           # output dir for count results
+    --class_id 0 \          # Class ID to count
+    --save_video \          # include to save annotated video
+    --tracker 'botsort.yaml' \  # tracker "bytetrack.yaml"
+    --conf_thresh 0.8 \     # detection threshold
+    --line_pos 0.6 \        # count line position, left - 0, right - 1
+    --move_right "Upstream" \  # migration direction of fish swiming right
+    --move_left "Downstream"   # migration direction of fish swiming left
+```
+
+**Batch processing**
+To process multiple videos at once, list their file paths in `scripts/video_file_list.txt`. Then, run this bash script. The results for each video will be saved in a dedicated directory (named after the video file) within the specified output directory (outdir).
+
+```bash
+./scripts/batch_fish_counter.sh  scripts/video_file_list.txt weights/river-herring-yolo11.pt outputs/fish_count
+
+# Arguments:
+#   VIDEO_LIST_FILE    Text file containing video file paths (one per line)
+#   WEIGHTS           Path to YOLO model weights
+#   OUT_DIR           Base output directory for all results
+
+#Options:
+#   --python-script PATH   Path to process_video_cli.py (default: src/count_fish.py)
+#   --class-id ID         Class ID to count (default: 0)
+#   --conf-thresh THRESH  Confidence threshold (default: 0.7)
+#   --line-pos POS        Line position 0.0-1.0 (default: 0.5)
+#   --imgsz W H          Input image size (default: 480 320)
+#   --tracker CONFIG     Tracker config file (default: bytetrack.yaml)
+#   --move-right LABEL   Label for rightward movement (default: Up)
+#   --move-left LABEL    Label for leftward movement (default: Down)
+#   --save-video         Save annotated videos
+#   --continue-on-error  Continue processing even if a video fails
+#   -h, --help          Show this help message
+
+```
+
+
+
 
 
 
