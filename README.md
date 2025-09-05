@@ -1,5 +1,19 @@
 # MIT-Sea-Grant-River-Herring-Public
-Code and supporting information for the MIT Sea Grant machine learning automated river herring video monitoring system  
+This repository contains code, models, tools, and documentation for a river herring monitoring system that uses underwater video and computer vision. It supports a complete workflow including: video processing and annotation, training custom YOLO-based detection models, tracking fish movements, generating fish counts and applying unbiased count corrections via importance sampling.
+ 
+
+
+## ⚙️ Requirement
+  * Platforms: Windows, Linux or maxOS
+  * NVIDIA GPU (recommended for CV model training and inference).
+  * python>=3.8 (tested on 3.12)
+  * [Ultralytic YOLO v11](https://github.com/ultralytics/ultralytics)
+  * [Supervision](https://supervision.roboflow.com/latest/)
+  * other depedencies listed in requirements.txt
+
+## 📁 Annotated Dataset
+Full set of bounding-box annotations from this project is available at:  https://lila.science/datasets/mit-sea-grant-river-herring/   
+It is also included in the Community Fish Detection Dataset (https://lila.science/datasets/community-fish-detection-dataset/).  
 
 
 ## Quick start - Run pre-trained model  
