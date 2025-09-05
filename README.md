@@ -10,26 +10,18 @@ This repository contains code, models, tools, and documentation for a river herr
   * Pytorch with CUDA if has a CUDA-enabled GPU
   * [Ultralytic YOLO v11](https://github.com/ultralytics/ultralytics)
   * [Supervision](https://supervision.roboflow.com/latest/)
-  * huggingface_hub (for test dataset)
+  * huggingface_hub (for downloading test dataset)
   * other depedencies listed in requirements.txt
 
 ## 📁 Annotated Dataset
-Full set of bounding-box annotations from this project is available at:  https://lila.science/datasets/mit-sea-grant-river-herring/   
-It is also included in the Community Fish Detection Dataset (https://lila.science/datasets/community-fish-detection-dataset/).  
+Full set of bounding-box annotations from this project is available at [lila.science](https://lila.science/datasets/mit-sea-grant-river-herring/).      
+It is also included in the [Community Fish Detection Dataset](https://lila.science/datasets/community-fish-detection-dataset/).  
 
-```
 
-torch==2.8.0+cu128
-torchvision==0.23.0+cu128
-ultralytics==8.3.193
-supervision==0.26.1
-pip install -r requirements.txt
 
-```
+## 🤖 YOLO model training
 
-## YOLO model training
-
-#### 1. Download test dataset
+#### 1. Download test dataset (a small subset for testing)
 ```python
 from huggingface_hub import hf_hub_download, snapshot_download
 snapshot_download(repo_id="zhongqic/Fisheye-example", allow_patterns=["*.tar.gz", "data.yaml"], repo_type="dataset", local_dir="data/test_train")
