@@ -67,7 +67,7 @@ model.val(data  = yaml_file, split = "test")
 ```
 
 
-## 🐟 3. Counting Fish
+## 🐟 Detect, Track and Count Fish
 A yolo11 model pretrained using the full dataset is available under `weights/` for river herring detection and counting. The speed of processing each video mostly depending on GPU.
 
 
