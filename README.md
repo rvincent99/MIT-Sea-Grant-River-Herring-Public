@@ -7,13 +7,13 @@ This repository contains code, models, tools, and documentation for a river herr
   * Platforms: Windows, Linux or maxOS
   * NVIDIA GPU (recommended for CV model training and inference).
   * python>=3.9 (tested on 3.12)
-  * Pytorch with CUDA if has a CUDA-enabled GPU
+  * Pytorch with CUDA (v12.8) if has a CUDA-enabled GPU
   * [Ultralytic YOLO v11](https://github.com/ultralytics/ultralytics)
   * [Supervision](https://supervision.roboflow.com/latest/)
   * huggingface_hub (for downloading test dataset)
   * other depedencies listed in requirements.txt
 
-Setup the environment to run scripts in this repo
+Setup environment to run scripts in this repo
 ```
 # clone the repo and enter directory
 git clone https://github.com/zhongqic/river-herring-cv.git && cd river-herring-cv
@@ -68,7 +68,7 @@ model.val(data  = yaml_file, split = "test")
 
 
 ## 🐟 Detect, Track and Count Fish
-A yolo11 model pretrained using the full dataset is available under `weights/` for river herring detection and counting. The speed of processing each video mostly depending on GPU.
+A yolo11 model pretrained on the full dataset is available under `weights/` for river herring detection and counting. The speed of processing each video mostly depending on GPU.
 
 
 ```python
