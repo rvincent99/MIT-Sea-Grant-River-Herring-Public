@@ -13,6 +13,20 @@ This repository contains code, models, tools, and documentation for a river herr
   * huggingface_hub (for downloading test dataset)
   * other depedencies listed in requirements.txt
 
+Setup the environment to run scripts in this repo
+```
+# clone the repo and enter directory
+git clone https://github.com/zhongqic/river-herring-cv.git && cd river-herring-cv
+
+# create a conda environment, with Python>=3.9
+conda create -n river-herring-cv python=3.12
+conda activate river-herring-cv
+
+# Install requirements
+pip install -r requirements.txt
+```
+
+
 ## 📁 Annotated Dataset
 Full set of bounding-box annotations from this project is available at [lila.science](https://lila.science/datasets/mit-sea-grant-river-herring/).      
 It is also included in the [Community Fish Detection Dataset](https://lila.science/datasets/community-fish-detection-dataset/).  
