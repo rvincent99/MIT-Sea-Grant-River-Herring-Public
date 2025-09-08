@@ -13,7 +13,8 @@ Example: `1_2025-03-28_19-00-00_933.mp4`, `Coonamessett_2025-03-28_19-00-00_933.
 
 <img src="../demo/camera_system.png" alt="Camera system" width="600"/>  
 
-**Fig. 1** Field camera system setup 
+**Fig. 1** Field camera system setup  
+
 <img src="../demo/sample_frames.png" alt="Camera system" width="600"/>  
 
 **Fig. 2** Frame examples
@@ -142,7 +143,7 @@ To ensure the accuracy of CV-generated fish counts, we implemented a multi-step 
 
 We also employed human review as a critical component of our validation strategy. Selected video segments, typically 10-minute clips in our project, were reviewed by a volunteer using a  GUI-based video player+counter tool. This interface logs the frame and timestamp when a fish is counted, allowing for comparison between human-generated and CV-generated counts.
 
-https://github.com/zhongqic/GUI-fish-counter.git
+https://github.com/zhongqic/GUI-fish-counter.git  
 <img src="../demo/GUIcounter.jpg" alt="GUI fish counter" width="400"/> 
 
 **Fig. 4** GUI fish counter. 
@@ -151,6 +152,7 @@ https://github.com/zhongqic/GUI-fish-counter.git
 
 
 CV models are fast, scalable, and with good accuracy, but not perfect. In crowded scenes, low visibility, or when fish overlap, the model may miss detections or count incorrectly. These limitations are visible in our figures, where dense activity or environmental noise can lead to undercounts or overcounts.
+
 <img src="../demo/CV_human_count.png" alt="compare counts" width="400"/> 
 
 
